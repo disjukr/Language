@@ -120,11 +120,10 @@ for 의 경우 T enumerable 클래스를 상속받아 구현해야 한다.
 
 ###모듈화###
 
-import 문을 통해 외부 모듈을 포함할 수 있다.
-모듈명의 경우 하위 폴더에서 상위 폴더 순으로 @을 붙여 구분한다.
-모듈의 멤버를 참조하는 경우, 멤버 @모듈과 같이 표현한다.
-
+import 문을 통해 외부 모듈을 포함할 수 있다. 파이썬의 그것과 유사하다.
+모듈명의 경우 계층 구조를 .으로 구분하여 참조한다. 모듈명에 띄어쓰기는 허용되지 않는다.
+모듈의 멤버를 참조하는 경우, 멤버 at 모듈과 같이 표현한다.
 ```
-import file @folder
-stdout < member @file @folder
+import folder.file
+stdout < member at folder.file
 ```
