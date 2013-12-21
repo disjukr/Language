@@ -10,6 +10,7 @@ func-[타입]-함수명(인자,)-[제네릭명,]:
 함수명은 고유하지 않으며, 인자의 형과 갯수에 따라 구분할 수 있다.
 인자 없는 함수는 Ruby 처럼 괄호를 생략할 수 있다.
 함수 첫 인자의 이름으로 self 키워드를 사용하면, self.function 과 같은 식으로 호출할 수 있다.
+이 표현식을 사용할 경우 가상함수 테이블을 참조한다.
 
 예로 아래와 같은 함수 정의가 있다면. `-10.abs()` 혹은 `-10.abs` 와 같이 호출할 수 있다.
 ```
@@ -53,7 +54,7 @@ class Programmer(Person):
 	int coffee
 
 func init(Programmer self, int age, char list name):
-	Person(self).init(age, name)
+	self.init.Person(age, name)
 	self.coffee = int.maximum
 ```
 ###상수 선언###
