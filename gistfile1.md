@@ -12,6 +12,7 @@ func-[타입]-함수명(인자,)-[제네릭명,]:
 함수명은 고유하지 않으며, 인자의 형과 갯수에 따라 구분할 수 있다.
 인자 없는 함수는 Ruby 처럼 괄호를 생략할 수 있다.
 함수 첫 인자의 이름으로 self 키워드를 사용하면, self.function 과 같은 식으로 호출할 수 있다.
+
 예로 아래와 같은 함수 정의가 있다면, -10.abs() 혹은 -10.abs 와 같이 호출할 수 있다.
 ```
 func int abs(int self):
@@ -100,6 +101,7 @@ typedef T id_list: int T Pair list
 ###lambda 와 delegate###
 
 lambda 키워드를 통해 무명 함수를 만들 수 있다. 컴파일 타임에 확장된다.
+
 delegate 키워드를 통해 동적으로 함수를 선택하여 호출할 수 있다.
 ```
 delegate int square(int) = lambda x: x^2
@@ -112,5 +114,6 @@ if, elif, else 문은 Python 의 그것과 일치한다.
 ###반복문###
 
 while 문은 Python 의 그것과 일치한다.
+
 for 의 경우 T enumerable 클래스를 상속받아 구현해야 한다.
 작동 방식은 Python 의 그것과 일치한다.
