@@ -30,7 +30,7 @@ class-클래스명(타입,)-[제네릭명,]:
 	변수선언,
 ```
 클래스의 정의는 변수의 나열과 같아 매우 간결하고, 외부 메서드로 이를 확장한다.
-함수 명으로 사용된 init 키워드는 생성자라고 하며 new 키워드로 호출할 수 있다.
+함수 명으로 사용된 init 키워드는 생성자라고 하며 클래스명으로 호출할 수 있다.
 객체를 생성하려면 클래스에 해댕하는 init 함수가 적어도 하나 이상 있어야 한다.
 ```
 class Person():
@@ -41,7 +41,7 @@ func init(Person self, int age, char list name=“John”):
 	self.age = age
 	self.name = name
 
-Person person = Person.new(3) 	# Person person(3) 으로 축약할 수 있다.
+Person person = Person(3) 	# Person person(3) 으로 축약할 수 있다.
 stdout < person.age 			# 3
 stdout < person.name 			# John
 ```
@@ -53,7 +53,7 @@ class Programmer(Person):
 	int coffee
 
 func init(Programmer self, int age, char list name):
-	self.Person.init(age, name)
+	Person(self).init(age, name)
 	self.coffee = int.maximum
 ```
 ###상수 선언###
@@ -71,14 +71,7 @@ func b(A class):
 	ret 20
 stdout < A.b	# 20
 ```
-###캐스팅###
 
-캐스팅 함수는 타입명을 함수명으로 사용하면 성립된다. 부모 클래스 캐스트 함수는 자동으로 생성된다.
-아래와 같은 식이라면, person.char list 혹은 char list(person) 두 가지 방식으로 호출할 수 있다.
-```
-func char list(Person self):
-	ret self.name
-```
 ###제네릭 클래스 선언###
 
 제네릭 클래스는 타입을 인자로 받는 클래스이다.
@@ -122,8 +115,8 @@ for 의 경우 T enumerable 클래스를 상속받아 구현해야 한다.
 
 import 문을 통해 외부 모듈을 포함할 수 있다. 파이썬의 그것과 유사하다.
 모듈명의 경우 계층 구조를 .으로 구분하여 참조한다. 모듈명에 띄어쓰기는 허용되지 않는다.
-모듈의 멤버를 참조하는 경우, 멤버 at 모듈 혹은 멤버@모듈 과 같이 표현한다.
+모듈의 멤버를 참조하는 경우, 모듈.멤버와 같이 표현한다.
 ```
 import folder.file
-stdout < member at folder.file
+stdout < folder.file.member
 ```
