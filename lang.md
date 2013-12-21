@@ -26,7 +26,7 @@ func T list +(T list self, T list other) unknown T:
 ```
 ###클래스 선언###
 ```
-class-클래스명(타입,):
+class-클래스명(타입,)-[제네릭명,]:
 	변수선언,
 ```
 클래스의 정의는 변수의 나열과 같아 매우 간결하고, 외부 메서드로 이를 확장한다.
@@ -88,6 +88,8 @@ class FT ST Pair() unknown FT, unknown ST:
 	FT first
 	ST second
 ```
+클래스 이름 뒤에 타입명을 붙여 제네릭 인자를 제한할 수 있다.
+모든 형에 대한 제네릭을 만들고 싶으면 unknown 키워드를 사용한다.
 ###typedef###
 
 typedef 키워드를 통해 길고 복잡한 타입명을 축약할 수 있다. 
