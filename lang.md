@@ -33,7 +33,7 @@ class-클래스명(타입,):
 함수 명으로 사용된 init 키워드는 생성자라고 하며 new 키워드로 호출할 수 있다.
 객체를 생성하려면 클래스에 해댕하는 init 함수가 적어도 하나 이상 있어야 한다.
 ```
-class Person:
+class Person():
 	int age
 	char list name
 
@@ -61,7 +61,7 @@ func init(Programmer self, int age, char list name):
 상수는 const 키워드를 이용하여 선언할 수 있다.
 클래스 안에 const 키워드를 사용한다면, 이 상수는 클래스 명을 통해 접근할 수 있다.
 ```
-class A:
+class A():
 	const int a = 10
 stdout < A.a	# 10
 ```
@@ -84,7 +84,7 @@ func char list(Person self):
 제네릭 클래스는 타입을 인자로 받는 클래스이다.
 제네릭 클래스의 선언은 아래와 같이 한다.
 ```
-class FT ST Pair unknown FT, unknown ST:
+class FT ST Pair() unknown FT, unknown ST:
 	FT first
 	ST second
 ```
