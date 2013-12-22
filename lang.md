@@ -70,7 +70,7 @@ init (Programmer self, int age, char list name):
 제네릭 타입은 타입을 인자로 받는 타입이다.
 제네릭 타입의 선언은 아래와 같이 한다.
 ```
-type FT ST Pair gen FT, ST:
+type Pair gen FT, ST:
 	FT first
 	ST second
 ```
