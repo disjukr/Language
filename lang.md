@@ -54,7 +54,7 @@ class Programmer(Person):
 	int coffee
 
 func init(Programmer self, int age, char list name):
-	self.init.Person(age, name)
+	init(self as Person, age, name)	# 가상함수를 사용하지 않는다
 	self.coffee = int.maximum
 ```
 ###상수 선언###
