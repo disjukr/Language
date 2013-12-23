@@ -62,6 +62,7 @@ type Programmer ext Person, Nerd:
 
 init (Programmer self, int age, char list name):
 	init(self as Person, age, name)	# 가상함수를 사용하지 않는다
+	init(self as Nerd)
 	self.coffee = int.maximum
 ```
 
