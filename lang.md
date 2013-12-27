@@ -137,7 +137,7 @@ for 의 경우 T enumerable 클래스를 상속받아 구현해야 한다.
 
 ###모듈###
 ```
-module [네임스페이스]:
+module [네임스페이스] [imp 인터페이스]:
 	모듈몸체
 ```
 이름공간을 다루기 위해 module 키워드를 사용한다.
@@ -148,4 +148,31 @@ module a.b.c:
 	using std.out as stdout
 	using folder.file
 	stdout < file.member
+```
+
+모듈의 인터페이스를 정의하면 같은 인터페이스를 구현하는 모듈 중
+특정 조건에 부합하는 구현을 가져오도록 할 수 있다.
+```
+interface json:
+	dynamic parse(string text)
+	string stringify(dynamic object)
+	test:
+		blabla
+	benchmark:
+		blabla
+
+module fastjson imp json:
+	dynamic parse(string text):
+		blabla
+	string stringify(dynamic object):
+		blabla
+
+module slowjson imp json:
+	dynamic parse(string text):
+		blabla
+	string stringify(dynamic object):
+		blabla
+
+module a:
+	using fastest stable json
 ```
