@@ -54,6 +54,23 @@ type string = char list
 type id_list gen T = int T Pair list
 ```
 
+###생성자###
+```
+init (타입명 self, [인자목록]):
+	함수몸체
+```
+init 키워드로 정의된 함수는 생성자라고 하며 타입명으로 호출할 수 있다.
+객체를 생성하려면 타입에 해당하는 init 함수가 적어도 하나 이상 있어야 한다.
+```
+init (Person self, int age, char list name="John"):
+	self.age = age
+	self.name = name
+
+Person person = Person(3) 	# Person person(3) 으로 축약할 수 있다.
+stdout < person.age 		# 3
+stdout < person.name 		# John
+```
+
 ###상속###
 
 ```
@@ -74,23 +91,6 @@ init (Programmer self, int age, char list name):
 type Pair gen FT, ST:
 	FT first
 	ST second
-```
-
-###생성자###
-```
-init (타입명 self, [인자목록]):
-	함수몸체
-```
-init 키워드로 정의된 함수는 생성자라고 하며 타입명으로 호출할 수 있다.
-객체를 생성하려면 타입에 해당하는 init 함수가 적어도 하나 이상 있어야 한다.
-```
-init (Person self, int age, char list name="John"):
-	self.age = age
-	self.name = name
-
-Person person = Person(3) 	# Person person(3) 으로 축약할 수 있다.
-stdout < person.age 		# 3
-stdout < person.name 		# John
 ```
 
 ###상수 선언###
